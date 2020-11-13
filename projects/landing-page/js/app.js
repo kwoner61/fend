@@ -18,6 +18,7 @@
  * 
 */
 let navList = {};
+let activeSectionId = "section1";
 
 /**
  * End Global Variables
@@ -31,7 +32,7 @@ function addToNav(id, name, navFragment) {
     navItemLink.setAttribute("class", "menu__link");
     navItemLink.setAttribute("href", "./index.html#".concat(id));
     navItemLink.setAttribute("data-section-id", id);
-    addClickEvent(navItemLink);
+    addClickEventListener(navItemLink);
     navItem.appendChild(navItemLink);
     navFragment.appendChild(navItem);
 };
@@ -54,7 +55,27 @@ function buildNavList() {
 }
 
 // Add class 'active' to section when near top of viewport
-
+function onScroll(event) {
+    const sections = document.getElementsByTagName("section");
+    let nearestSection = {};
+    let smallestTop = Number.MAX_VALUE;
+    for (const section of sections) {
+        const sectionId = section.getAttribute("id");
+        const sectionTop = Math.abs(section.getBoundingClientRect().top);
+        if (sectionTop < smallestTop) {
+            smallestTop = sectionTop;
+            nearestSection = section;
+        }
+    }
+    let sectionClass = nearestSection.classList;
+    if (!sectionClass.contains("section--active")) {
+        sectionClass.add("section--active");
+    }
+    if (nearestSection.getAttribute("id") !== activeSectionId) {
+        document.getElementById(activeSectionId).classList.remove("section--active");
+        activeSectionId = nearestSection.getAttribute("id");
+    }
+}
 
 // Scroll to anchor ID using scrollTO event
 function onNavClick(event) {
@@ -78,13 +99,16 @@ function onDomContentLoaded() {
     navList.style.display = "none";
     buildNavList();
     navList.style.display = "block";
+    addScrollEventListener();
 };
 
 // Scroll to section on link click
-function addClickEvent() {
+function addClickEventListener() {
     navList.addEventListener("click", onNavClick);
 }
 
 // Set sections as active
-
+function addScrollEventListener() {
+    window.addEventListener("scroll", onScroll);
+}
 
