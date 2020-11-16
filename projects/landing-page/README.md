@@ -1,13 +1,12 @@
-# Landing Page Project
+# Landing Page Project: JavaScript Practice
 
-## Table of Contents
+## Link to the page:
 
-* [Instructions](#instructions)
+* [https://kwoner61.github.io/fend/projects/landing-page/](https://kwoner61.github.io/fend/projects/landing-page/)
 
-## Instructions
+## Features:
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- [x] Highlight active section's navigation link
+- [x] Highlight active section and start section's animation
+- [x] Scroll to Anchor on click of navigation link
+- [x] Dynamically build the navigation links
