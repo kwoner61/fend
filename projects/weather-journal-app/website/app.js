@@ -1,5 +1,3 @@
-//const { request } = require('http');
-
 /* Global Variables */
 const apiKey = '9d3a2f33d5f20c9fe325af888b8b4fa0';
 const weatherApiBaseUrl = 'https://api.openweathermap.org/data/2.5/weather?units=imperial&zip=';
@@ -9,6 +7,7 @@ const getWeatherData = async (url = '', zipCode = 06511) => {
   const response = await fetch(url + zipCode + ',us&appid=' + apiKey);
   try {
     const weatherData = await response.json();
+    console.log('Retrieved weather data for zip: ', zipCode);
     return weatherData;
   } catch (error) {
     console.log('error', error);
@@ -22,7 +21,7 @@ function onGenerate(e) {
   getWeatherData(weatherApiBaseUrl, zipCode).then(function(weatherData) {
     let newEntryData = createNewEntry(weatherData);
     saveWeatherData('/journal-entries', newEntryData).then(function(response) {
-      console.log(response);
+      console.log('Saved new entry: ', newEntryData);
     }).then(
       updateView()
     );
@@ -50,9 +49,7 @@ const saveWeatherData = async (url = '', data = {})=>{
     body: JSON.stringify(data)
   });
   try {
-    const newData = await response.json();
-    console.log('newData: ', newData);
-    return newData;
+    return response;
   } catch (error) {
     console.log('error', error);
   }
