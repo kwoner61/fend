@@ -9,7 +9,7 @@
 
 1. [Personal Blog Website](https://kwoner61.github.io/personal-blog)
 2. [Landing Page](https://kwoner61.github.io/fend/projects/landing-page/)
-3. [Weather Journal App]
+3. [Weather Journal App](http://18.207.35.28:8080/)
 4. [Evaluate A News Article with Natural Language Processing]
 5. Capstone - Travel App
 
@@ -19,6 +19,6 @@ The following is a list of the courses associated with the Front End Nanodegree.
 
 * [x] C1 - CSS, Website Layout, Website Components
 * [x] C2 - JavaScript & The DOM
-* [ ] C3 - Web API's and Asynchronous Applications
+* [x] C3 - Web API's and Asynchronous Applications
 * [ ] C4 - Build Tools and Single Page Web Apps
 * [ ] C5 - Capstone
