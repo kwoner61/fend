@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = [];
 
 // Require Express to run server and routes
 const express = require('express');
@@ -21,10 +21,28 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-function listening(){
-     console.log("server running");
-     console.log(`running on localhost: {$port}`);
+// Return projectData
+app.get('/journal-entries', function (req, res) {
+  console.log('returning projectData: ', projectData);
+  res.send(projectData);
+})
+
+// Add to projectData
+app.post('/journal-entries', function (req, res) {
+  const newEntry = {
+    temperature: req.body.temperature,
+    date: req.body.date,
+    userResponse: req.body.userResponse
+  }
+  projectData.push(newEntry);
+  console.log('newEntry = ', newEntry);
+  res.send("Added new entry!");
+})
+
+function listening() {
+  console.log("server running");
+  console.log(`running on localhost: {$port}`);
 }
 
 // Setup Server
-const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)})
+const server = app.listen(port, () => { console.log(`running on localhost: ${port}`) })
