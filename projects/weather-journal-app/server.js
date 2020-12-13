@@ -23,7 +23,6 @@ app.use(express.static('website'));
 
 // Return projectData
 app.get('/journal-entries', function (req, res) {
-  console.log('returning projectData: ', projectData);
   res.send(projectData);
 })
 
@@ -34,8 +33,9 @@ app.post('/journal-entries', function (req, res) {
     date: req.body.date,
     userResponse: req.body.userResponse
   }
-  console.log('Added new entry on', projectData.date);
-  res.send('Added new entry on', projectData.date);
+  res.status(201).send({
+    message: 'Added new entry on' + projectData.date
+  });
 })
 
 function listening() {

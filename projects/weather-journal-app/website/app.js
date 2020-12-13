@@ -21,7 +21,6 @@ function onGenerate(e) {
   getWeatherData(weatherApiBaseUrl, zipCode).then(function(weatherData) {
     let newEntryData = createNewEntry(weatherData);
     saveWeatherData('/journal-entries', newEntryData).then(function(response) {
-      console.log('Saved new entry: ', newEntryData);
     }).then(
       updateView()
     );
@@ -59,6 +58,7 @@ const saveWeatherData = async (url = '', data = {})=>{
 const updateView = async () => {
   const response = await fetch('/journal-entries');
   try {
+    clearForm();
     const projectData = await response.json();
     document.getElementById('date').innerHTML = projectData.date;
     document.getElementById('temp').innerHTML = projectData.temperature + ' F';
@@ -66,6 +66,12 @@ const updateView = async () => {
   } catch (error) {
     console.log('error', error);
   }
+}
+
+// Clear all user input
+function clearForm() {
+  document.getElementById('feelings').value = '';
+  document.getElementById('zip').value = '';
 }
 
 // Get the current date
