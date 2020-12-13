@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = '9d3a2f33d5f20c9fe325af888b8b4fa0';
+const apiKey = '';
 const weatherApiBaseUrl = 'https://api.openweathermap.org/data/2.5/weather?units=imperial&zip=';
 
 // Retrieve current weather data by zipcode
