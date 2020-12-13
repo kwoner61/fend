@@ -59,11 +59,10 @@ const saveWeatherData = async (url = '', data = {})=>{
 const updateView = async () => {
   const response = await fetch('/journal-entries');
   try {
-    const allEntries = await response.json();
-    const lastIndex = allEntries.length - 1;
-    document.getElementById('date').innerHTML = allEntries[lastIndex].date;
-    document.getElementById('temp').innerHTML = allEntries[lastIndex].temperature + ' F';
-    document.getElementById('content').innerHTML = '"' + allEntries[lastIndex].userResponse + '"';
+    const projectData = await response.json();
+    document.getElementById('date').innerHTML = projectData.date;
+    document.getElementById('temp').innerHTML = projectData.temperature + ' F';
+    document.getElementById('content').innerHTML = '"' + projectData.userResponse + '"';
   } catch (error) {
     console.log('error', error);
   }
