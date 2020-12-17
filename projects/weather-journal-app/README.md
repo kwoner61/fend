@@ -1,9 +1,7 @@
 # My Weather-Journal App implementation
 
 ## Overview
-The Node app is hosted on an AWS Lightsail instance.
+This is an Express application that makes a RESTful call to Open Weather's API and logs the weather data along with the user's journal entry. 
 
-You can access the demo [here](http://18.207.35.28:8080/).
-
-## Instructions
+## Build Instructions
 `npm install & node server.js`
