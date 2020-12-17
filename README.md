@@ -9,7 +9,7 @@
 
 1. [Personal Blog Website](https://kwoner61.github.io/personal-blog)
 2. [Landing Page](https://kwoner61.github.io/fend/projects/landing-page/)
-3. [Weather Journal App](http://18.207.35.28:8080/)
+3. [Weather Journal App](https://github.com/kwoner61/fend/tree/master/projects/weather-journal-app)
 4. [Evaluate A News Article with Natural Language Processing]
 5. Capstone - Travel App
 
