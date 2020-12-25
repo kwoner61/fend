@@ -19,12 +19,12 @@ function sendSentimentRequest(formText) {
             'text': formText
         })
     })
-        .then(res => res.json())
-        .then(res => {
-            document.getElementById('results_prefix').style.visibility = 'visible'
-            document.getElementById('results').innerHTML = getSentimentLabel(res.score_tag)
-            document.getElementById('name').value = ''
-        })
+    .then(res => res.json())
+    .then(res => {
+        document.getElementById('results_prefix').style.visibility = 'visible'
+        document.getElementById('results').innerHTML = getSentimentLabel(res.score_tag)
+        document.getElementById('name').value = ''
+    })
 }
 
 function getSentimentLabel(code) {
