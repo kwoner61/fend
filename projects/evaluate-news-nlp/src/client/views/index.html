@@ -2,30 +2,30 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Words, Sentences and Feelings</title>
     </head>
 
     <body>
 
         <header>
             <div class="">
-                Logo
+                
             </div>
             <div class="">
-                navigation
+                
             </div>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <textarea id="name" type="text" name="input" value="" onblur="" placeholder="Message to send to Sentiment Analysis" maxlength="500" rows="8"></textarea>
+                    <input type="submit" name="" value="Send Message" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            <section>
+              </section>
 
             <section>
-                <strong>Form Results:</strong>
+                <strong>Your message was...</strong>
                 <div id="results"></div>
             </section>
         </main>

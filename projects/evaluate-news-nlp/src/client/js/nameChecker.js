@@ -8,9 +8,11 @@ function checkForName(inputText) {
         "Georgiou"
     ]
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
-    }
+    names.forEach(function (item) {
+        if (inputText.includes(item)) {
+            alert("Welcome, Captain!")
+        }
+    })
 }
 
 export { checkForName }
