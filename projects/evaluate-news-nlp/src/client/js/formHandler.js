@@ -21,9 +21,27 @@ function sendSentimentRequest(formText) {
     })
         .then(res => res.json())
         .then(res => {
-            document.getElementById('results').innerHTML = res.score_tag
+            document.getElementById('results_prefix').style.visibility = 'visible'
+            document.getElementById('results').innerHTML = getSentimentLabel(res.score_tag)
             document.getElementById('name').value = ''
         })
+}
+
+function getSentimentLabel(code) {
+    switch (code) {
+        case 'P+':
+            return 'Very Positive'
+        case 'P':
+            return 'Positive'
+        case 'NEU':
+            return 'Neutral'
+        case 'N':
+            return 'Negative'
+        case 'N+':
+            return 'Very Negative'
+        case 'NONE':
+            return 'Not Sentimental at all'
+    }
 }
 
 function validateInputText(inputText) {
