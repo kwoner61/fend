@@ -20,10 +20,18 @@ function sendSentimentRequest(formText) {
         })
     })
     .then(res => res.json())
+    .catch((error) => {
+        console.log('Error during fetch to /sentiment-analysis! ', error)
+        alert('Oh no! The server is not reachable.')
+        return {
+            score_tag: 'ERROR',
+            place_holder: document.getElementById('name').value
+        }
+    })
     .then(res => {
         document.getElementById('results_prefix').style.visibility = 'visible'
         document.getElementById('results').innerHTML = getSentimentLabel(res.score_tag)
-        document.getElementById('name').value = ''
+        document.getElementById('name').value = res.place_holder ? res.place_holder : '' // value will be '' if no error
     })
 }
 
@@ -41,6 +49,8 @@ function getSentimentLabel(code) {
             return 'Very Negative'
         case 'NONE':
             return 'Not Sentimental at all'
+        case 'ERROR':
+            return 'Not Sent'
     }
 }
 
