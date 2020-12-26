@@ -20,5 +20,5 @@ The following is a list of the courses associated with the Front End Nanodegree.
 * [x] C1 - CSS, Website Layout, Website Components
 * [x] C2 - JavaScript & The DOM
 * [x] C3 - Web API's and Asynchronous Applications
-* [ ] C4 - Build Tools and Single Page Web Apps
+* [x] C4 - Build Tools and Single Page Web Apps
 * [ ] C5 - Capstone
