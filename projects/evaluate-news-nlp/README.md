@@ -9,3 +9,5 @@
 - `npm start`
 ### Run the dev server on port 8080
 - `npm run build-dev`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bacf1986-11d5-4851-98bb-3e150641716e/deploy-status)](https://app.netlify.com/sites/fend-sentiment-analysis/deploys)
