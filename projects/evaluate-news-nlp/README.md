@@ -1,6 +1,6 @@
 # Evaluate Sentiment of Text
 This is my code implementation for Project 4 of FEND at Udacity.
-The application will send a message (user input text) to the Sentiment Analysis API (MeaningfulCloud)
+The application will send a message (user input text) to the Sentiment Analysis API ([MeaningfulCloud](https://www.meaningcloud.com/developer/sentiment-analysis))
 and will receive in return a Sentiment score of the message.
 
 The Sentiment score is translated into a readable message.
