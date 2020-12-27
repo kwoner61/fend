@@ -10,7 +10,7 @@
 1. [Personal Blog Website](https://kwoner61.github.io/personal-blog)
 2. [Landing Page](https://kwoner61.github.io/fend/projects/landing-page/)
 3. [Weather Journal App](https://github.com/kwoner61/fend/tree/master/projects/weather-journal-app)
-4. [Evaluate A News Article with Natural Language Processing](https://github.com/kwoner61/fend/tree/master/projects/evaluate-news-nlp)
+4. [Evaluate Text with Natural Language Processing](https://github.com/kwoner61/fend/tree/master/projects/evaluate-news-nlp)
 5. Capstone - Travel App
 
 ## Courses
